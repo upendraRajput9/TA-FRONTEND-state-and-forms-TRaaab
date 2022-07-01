@@ -4,21 +4,20 @@ class Max extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            counter:0,
+            count:0,
             add :1,
             max:"true"
         }
     }
     handleIncrement=()=>{
-        if(this.state.counter<this.state.max||this.state.max==="true"){
-        this.setState({counter:this.state.counter+this.state.add})
-    }
+        let {count,add,max} = this.state
+        this.setState({count:count+add>max?count:count+add})
     };
     handleDecrement=()=>{
-        this.setState({counter:this.state.counter-this.state.add})
+        this.setState({count:this.state.count-this.state.add})
     }
     handlereset=()=>{
-        this.setState({counter:0})
+        this.setState({count:0})
     }
 handleStep=(num)=>{
     this.setState({add:num})
@@ -30,22 +29,18 @@ handleMax=(num)=>{
     return(
         
      <div className="app">
-        <h1>{this.state.counter}</h1>
+        <h1>{this.state.count}</h1>
         <div className="set">
         <article className="set-step">
         <h2>Steps</h2>
         <div className="step-btn">
-           <button onClick={()=>this.handleStep(5)}>5</button>
-           <button onClick={()=>this.handleStep(10)}>10</button>
-           <button onClick={()=>this.handleStep(15)}>15</button>
+            {[5,10,15].map((step)=> <button key={step} className={this.state.add===step?"active":"stepBtn"} onClick={()=>this.handleStep(step)}>{step}</button>)}
            </div>
         </article>
         <article className="set-step">
         <h2>Max Values</h2>
         <div className="step-btn">
-           <button onClick={()=>this.handleMax(15)}>15</button>
-           <button onClick={()=>this.handleMax(100)}>100</button>
-           <button onClick={()=>this.handleMax(200)}>200</button>
+        {[15,100,200].map((step)=>  <button className={this.state.max===step?"active":"stepBtn"} onClick={()=>this.handleMax(step)}>{step}</button>)}
            </div>
         </article>
         </div>

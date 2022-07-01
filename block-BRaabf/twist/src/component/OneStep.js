@@ -28,9 +28,8 @@ handleStep=(num)=>{
         <article className="set-step">
             <h2>Steps</h2>
         <div className="step-btn">
-           <button onClick={()=>this.handleStep(5)}>5</button>
-           <button onClick={()=>this.handleStep(10)}>10</button>
-           <button onClick={()=>this.handleStep(15)}>15</button>
+            {[5,10,15].map((step)=> <button className={this.state.add===step?"active":"stepBtn"} onClick={()=>this.handleStep(step)}>{step}</button>)}
+           
            </div>
         </article>
         <article className="btns">
