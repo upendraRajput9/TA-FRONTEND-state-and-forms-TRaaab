@@ -140,7 +140,7 @@ main div{
 }
 .active h2{
     background-color: rgb(179,223,172);
-  
+  margin-bottom: 5px;
 }
 main{
     border: 5px dotted rgb(206,62,61);
