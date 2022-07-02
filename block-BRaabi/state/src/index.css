@@ -4,7 +4,7 @@
 */
 
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2,p, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -113,23 +113,28 @@ a{
 .flex-40{
     flex: 0 1 40%;
 }
+h1{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
 h2{
     border: 2px solid rgb(102, 68, 0);
     background-color: rgb(253,215,140);
-    font-size: 2rem;
+    font-size: 3rem;
     padding: 7px 1.5rem;
 }
-h3{
-    font-size: 1.5rem;
+p{
+    font-size: 2rem;
 }
- h3{
+p{
     display: none;
     
 }
 main div{
     margin-bottom: 1rem;
 }
-.active h3{
+.active p{
     display: block;
     padding: 5px 1rem;
 }

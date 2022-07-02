@@ -38,10 +38,11 @@ constructor(props){
 render(){
     return(
         <main>
+          <h1>ALTCAMPUS FAQ</h1>
         {questions.map((question)=>
            <div className={this.state.ques===question.Q?"active":""} onClick={()=>this.handle(question.Q)} key={question.Q}>
-            <h2 >{question.Q}</h2>
-            <h3>{question.A}</h3>
+            <h2 >{question.Q}{this.state.ques===question.Q?"👆":"👇"}</h2>
+            <p>{question.A}</p>
 
             </div>
         )}
